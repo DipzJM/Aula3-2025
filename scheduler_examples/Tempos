@@ -1,0 +1,118 @@
+FIFO ./run_apps.sh
+
+EXEC 1
+
+Application C (PID 7097) finished at time 29670 ms, Elapsed: 20.000 seconds, CPU: 20.000 seconds
+Application A (PID 7095) finished at time 39670 ms, Elapsed: 30.000 seconds, CPU: 10.000 seconds
+Application B (PID 7096) finished at time 54670 ms, Elapsed: 45.000 seconds, CPU: 15.000 seconds
+Application B (PID 7100) finished at time 69670 ms, Elapsed: 46.680 seconds, CPU: 15.000 seconds
+Application A (PID 7099) finished at time 79670 ms, Elapsed: 56.680 seconds, CPU: 10.000 seconds
+Application C (PID 7101) finished at time 99670 ms, Elapsed: 76.680 seconds, CPU: 20.000 seconds
+
+
+EXEC 2
+Application B (PID 7105) finished at time 182210 ms, Elapsed: 15.000 seconds, CPU: 15.000 seconds
+Application A (PID 7104) finished at time 192210 ms, Elapsed: 25.000 seconds, CPU: 10.000 seconds
+Application C (PID 7106) finished at time 212210 ms, Elapsed: 45.000 seconds, CPU: 20.000 seconds
+Application A (PID 7108) finished at time 222210 ms, Elapsed: 40.080 seconds, CPU: 10.000 seconds
+Application B (PID 7109) finished at time 237210 ms, Elapsed: 55.080 seconds, CPU: 15.000 seconds
+Application C (PID 7110) finished at time 257210 ms, Elapsed: 75.080 seconds, CPU: 20.000 seconds
+
+EXEC 3
+
+Application A (PID 7112) finished at time 283270 ms, Elapsed: 10.000 seconds, CPU: 10.000 seconds
+Application B (PID 7113) finished at time 298270 ms, Elapsed: 25.000 seconds, CPU: 15.000 seconds
+Application C (PID 7114) finished at time 318270 ms, Elapsed: 45.000 seconds, CPU: 20.000 seconds
+Application A (PID 7116) finished at time 328270 ms, Elapsed: 53.440 seconds, CPU: 10.000 seconds
+Application B (PID 7117) finished at time 343270 ms, Elapsed: 68.440 seconds, CPU: 15.000 seconds
+Application C (PID 7118) finished at time 363270 ms, Elapsed: 88.440 seconds, CPU: 20.000 seconds
+
+FIFO ./run_apps2.sh
+
+EXEC 1
+Application A (PID 7121) finished at time 403290 ms, Elapsed: 5.000 seconds, CPU: 5.000 seconds
+Application B (PID 7122) finished at time 413290 ms, Elapsed: 15.000 seconds, CPU: 10.000 seconds
+Application C (PID 7123) finished at time 417290 ms, Elapsed: 19.000 seconds, CPU: 4.000 seconds
+Application D (PID 7124) finished at time 419290 ms, Elapsed: 21.000 seconds, CPU: 2.000 seconds
+Application E (PID 7125) finished at time 422290 ms, Elapsed: 24.000 seconds, CPU: 3.000 seconds
+Application F (PID 7126) finished at time 437290 ms, Elapsed: 39.000 seconds, CPU: 15.000 seconds
+Application A (PID 7128) finished at time 442290 ms, Elapsed: 42.680 seconds, CPU: 5.000 seconds
+Application B (PID 7129) finished at time 452290 ms, Elapsed: 52.680 seconds, CPU: 10.000 seconds
+Application C (PID 7130) finished at time 456290 ms, Elapsed: 56.680 seconds, CPU: 4.000 seconds
+Application D (PID 7131) finished at time 458290 ms, Elapsed: 58.680 seconds, CPU: 2.000 seconds
+Application E (PID 7132) finished at time 461290 ms, Elapsed: 61.670 seconds, CPU: 3.000 seconds
+Application F (PID 7133) finished at time 476290 ms, Elapsed: 76.670 seconds, CPU: 15.000 seconds
+
+
+EXEC 2
+Application A (PID 7136) finished at time 496880 ms, Elapsed: 5.000 seconds, CPU: 5.000 seconds
+Application B (PID 7137) finished at time 506880 ms, Elapsed: 15.000 seconds, CPU: 10.000 seconds
+Application D (PID 7139) finished at time 508880 ms, Elapsed: 17.000 seconds, CPU: 2.000 seconds
+Application C (PID 7138) finished at time 512880 ms, Elapsed: 21.000 seconds, CPU: 4.000 seconds
+Application E (PID 7140) finished at time 515880 ms, Elapsed: 24.000 seconds, CPU: 3.000 seconds
+Application F (PID 7141) finished at time 530880 ms, Elapsed: 39.000 seconds, CPU: 15.000 seconds
+Application A (PID 7143) finished at time 535880 ms, Elapsed: 43.170 seconds, CPU: 5.000 seconds
+Application B (PID 7144) finished at time 545880 ms, Elapsed: 53.170 seconds, CPU: 10.000 seconds
+Application C (PID 7145) finished at time 549880 ms, Elapsed: 57.170 seconds, CPU: 4.000 seconds
+Application E (PID 7147) finished at time 552880 ms, Elapsed: 60.170 seconds, CPU: 3.000 seconds
+Application F (PID 7148) finished at time 567880 ms, Elapsed: 75.170 seconds, CPU: 15.000 seconds
+Application D (PID 7146) finished at time 569880 ms, Elapsed: 77.170 seconds, CPU: 2.000 seconds
+
+EXEC 3
+
+Application A (PID 7157) finished at time 839510 ms, Elapsed: 5.000 seconds, CPU: 5.000 seconds
+Application B (PID 7158) finished at time 849510 ms, Elapsed: 15.000 seconds, CPU: 10.000 seconds
+Application C (PID 7159) finished at time 853510 ms, Elapsed: 19.000 seconds, CPU: 4.000 seconds
+Application E (PID 7161) finished at time 856510 ms, Elapsed: 22.000 seconds, CPU: 3.000 seconds
+Application D (PID 7160) finished at time 858510 ms, Elapsed: 24.000 seconds, CPU: 2.000 seconds
+Application F (PID 7162) finished at time 873510 ms, Elapsed: 39.000 seconds, CPU: 15.000 seconds
+
+
+SJF ./run_apps.sh
+
+
+EXEC 1
+Application A (PID 7193) finished at time 12840 ms, Elapsed: 10.000 seconds, CPU: 10.000 seconds
+Application A (PID 7198) finished at time 22840 ms, Elapsed: 17.680 seconds, CPU: 10.000 seconds
+Application B (PID 7194) finished at time 37840 ms, Elapsed: 35.000 seconds, CPU: 15.000 seconds
+Application B (PID 7199) finished at time 52840 ms, Elapsed: 47.680 seconds, CPU: 15.000 seconds
+Application C (PID 7195) finished at time 72840 ms, Elapsed: 70.000 seconds, CPU: 20.000 seconds
+Application C (PID 7200) finished at time 92840 ms, Elapsed: 87.680 seconds, CPU: 20.000 seconds
+
+EXEC 2
+Application A (PID 7206) finished at time 224150 ms, Elapsed: 10.000 seconds, CPU: 10.000 seconds
+Application B (PID 7207) finished at time 239150 ms, Elapsed: 25.000 seconds, CPU: 15.000 seconds
+Application C (PID 7208) finished at time 259150 ms, Elapsed: 45.000 seconds, CPU: 20.000 seconds
+
+EXEC 3
+Application A (PID 7211) finished at time 310020 ms, Elapsed: 10.000 seconds, CPU: 10.000 seconds
+Application B (PID 7212) finished at time 325020 ms, Elapsed: 25.000 seconds, CPU: 15.000 seconds
+Application C (PID 7213) finished at time 345020 ms, Elapsed: 45.000 seconds, CPU: 20.000 seconds
+
+SJF ./run_apps2.sh
+
+EXEC 1
+Application D (PID 7219) finished at time 378060 ms, Elapsed: 2.000 seconds, CPU: 2.000 seconds
+Application E (PID 7220) finished at time 381060 ms, Elapsed: 5.000 seconds, CPU: 3.000 seconds
+Application C (PID 7218) finished at time 385060 ms, Elapsed: 9.000 seconds, CPU: 4.000 seconds
+Application A (PID 7216) finished at time 390060 ms, Elapsed: 14.000 seconds, CPU: 5.000 seconds
+Application B (PID 7217) finished at time 400060 ms, Elapsed: 24.000 seconds, CPU: 10.000 seconds
+Application F (PID 7221) finished at time 415060 ms, Elapsed: 39.000 seconds, CPU: 15.000 seconds
+
+EXEC 2
+Application D (PID 7226) finished at time 476120 ms, Elapsed: 2.000 seconds, CPU: 2.000 seconds
+Application E (PID 7227) finished at time 479120 ms, Elapsed: 5.000 seconds, CPU: 3.000 seconds
+Application C (PID 7225) finished at time 483120 ms, Elapsed: 9.000 seconds, CPU: 4.000 seconds
+Application A (PID 7223) finished at time 488120 ms, Elapsed: 14.000 seconds, CPU: 5.000 seconds
+Application B (PID 7224) finished at time 498120 ms, Elapsed: 24.000 seconds, CPU: 10.000 seconds
+Application F (PID 7228) finished at time 513120 ms, Elapsed: 39.000 seconds, CPU: 15.000 seconds
+
+EXEC 3
+
+Application D (PID 7233) finished at time 558080 ms, Elapsed: 2.000 seconds, CPU: 2.000 seconds
+Application E (PID 7234) finished at time 561080 ms, Elapsed: 5.000 seconds, CPU: 3.000 seconds
+Application C (PID 7232) finished at time 565080 ms, Elapsed: 9.000 seconds, CPU: 4.000 seconds
+Application A (PID 7230) finished at time 570080 ms, Elapsed: 14.000 seconds, CPU: 5.000 seconds
+Application B (PID 7231) finished at time 580080 ms, Elapsed: 24.000 seconds, CPU: 10.000 seconds
+Application F (PID 7235) finished at time 595080 ms, Elapsed: 38.990 seconds, CPU: 15.000 seconds
+

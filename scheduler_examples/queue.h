@@ -69,6 +69,16 @@ int enqueue_pcb(queue_t* q, pcb_t* task);
 pcb_t* dequeue_pcb(queue_t* q);
 
 /**
+ * @brief Dequeue a pcb from the queue
+ *
+ * This function removes and returns the pcb at the front of the queue (FIFO order).
+ *
+ * @param q The queue from which the task will be removed
+ * @return The pcb at the front of the queue, or NULL if the queue is empty
+ */
+pcb_t* dequeue_short(queue_t* q);
+
+/**
  * @brief Remove a specific element from the queue
  *
  * This function removes a specific element from the queue.
