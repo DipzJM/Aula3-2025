@@ -13,10 +13,12 @@
 #include <sys/errno.h>
 
 #include "fifo.h"
+#include "SJF.h"
+#include "RR.h"
 
 #include "msg.h"
 #include "queue.h"
-#include "SJF.h"
+
 
 static uint32_t PID = 0;
 
@@ -235,8 +237,8 @@ void check_blocked_queue(queue_t * blocked_queue, queue_t * command_queue, uint3
 static const char *SCHEDULER_NAMES[] = {
     "FIFO",
     "SJF",
-    /*
     "RR",
+    /*
     "MLFQ",
 */
     NULL
@@ -313,6 +315,9 @@ int main(int argc, char *argv[]) {
                 break;
             case SCHED_SJF:
                 sjf_scheduler(current_time_ms, &ready_queue, &CPU);
+                break;
+            case SCHED_RR:
+                rr_scheduler(current_time_ms,&ready_queue,&CPU);
                 break;
 
             default:
