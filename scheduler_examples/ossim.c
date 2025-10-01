@@ -15,6 +15,7 @@
 #include "fifo.h"
 #include "SJF.h"
 #include "RR.h"
+#include "MLFQ.h"
 
 #include "msg.h"
 #include "queue.h"
@@ -238,9 +239,7 @@ static const char *SCHEDULER_NAMES[] = {
     "FIFO",
     "SJF",
     "RR",
-    /*
     "MLFQ",
-*/
     NULL
 };
 
@@ -318,6 +317,9 @@ int main(int argc, char *argv[]) {
                 break;
             case SCHED_RR:
                 rr_scheduler(current_time_ms,&ready_queue,&CPU);
+                break;
+            case SCHED_MLFQ:
+                mlfq_scheduler(current_time_ms,&ready_queue,&CPU);
                 break;
 
             default:
