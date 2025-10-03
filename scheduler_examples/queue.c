@@ -47,35 +47,6 @@ pcb_t* dequeue_pcb(queue_t* q) {
     return task;
 }
 
-/**
- * @brief Remove e retorna o processo com o menor tempo de execução da fila.
- *
- * Esta função percorre a fila de processos prontos e encontra o processo
- * com o menor tempo total (`time_ms`). Remove o nó correspondente da fila
- * e retorna o ponteiro para o PCB do processo.
- *
- * @param q Ponteiro para a fila de processos (`queue_t`). Não deve ser NULL.
- *
- * @return pcb_t* Ponteiro para o processo com menor tempo de execução,
- *                ou NULL se a fila estiver vazia.
- *
- * @var prev Ponteiro para o nó anterior ao nó atual durante a travessia da lista.
- *           Inicialmente NULL, usado para manter referência do nó anterior a `curr`.
- *
- * @var curr Ponteiro para o nó atual da lista que está a ser percorrido.
- *           Inicialmente aponta para o head da fila.
- *
- * @var min_prev Ponteiro para o nó anterior ao nó com menor tempo de execução encontrado até agora.
- *                Inicialmente NULL (se o nó com menor tempo for o head).
- *
- * @var min_node Ponteiro para o nó com menor tempo de execução encontrado até agora.
- *                 Inicialmente aponta para o head da fila.
- *
- * @var next_task Ponteiro temporário para armazenar o nó retornado pela função remove_queue_elem,
- *                que efetivamente remove o min_node da lista.
- *
- * @var res Ponteiro para o PCB do processo que será retornado ao escalonador.
- */
 
 
 pcb_t* dequeue_short(queue_t* q) {
