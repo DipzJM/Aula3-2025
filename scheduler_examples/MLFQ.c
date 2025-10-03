@@ -61,3 +61,9 @@ void mlfq_scheduler(uint32_t current_time_ms,mlfq_t *mq, pcb_t **cpu_task) {
         }
     }
 }
+
+
+// TODO: Create this function
+mlfq_t *create_mlfq() {
+    return NULL;
+};
