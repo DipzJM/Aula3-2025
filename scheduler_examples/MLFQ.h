@@ -9,9 +9,9 @@ typedef struct {
     int niveis;
 } mlfq_t;
 
-
 void mlfq_scheduler(uint32_t current_time_ms,mlfq_t *mq, pcb_t **cpu_task);
 
 
+mlfq_t *create_mlfq();
 
 #endif //MLFQ_H

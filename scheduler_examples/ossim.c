@@ -20,7 +20,7 @@
 #include "msg.h"
 #include "queue.h"
 
-
+mlfq_t *mq = NULL;
 static uint32_t PID = 0;
 
 
@@ -292,8 +292,20 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Failed to set up server socket\n");
         return 1;
     }
+
+    if (scheduler_type == SCHED_MLFQ) {
+
+        mq = create_mlfq();
+        if (!mq) {
+            fprintf(stderr, "Failed to create MLFQ\n");
+            return 1;
+        }
+    }
+
+
     printf("Scheduler server listening on %s...\n", SOCKET_PATH);
     uint32_t current_time_ms = 0;
+
     while (1) {
         // Check for new connections and/or instructions
         check_new_commands(&command_queue, &blocked_queue, &ready_queue, server_fd, current_time_ms);
@@ -319,7 +331,7 @@ int main(int argc, char *argv[]) {
                 rr_scheduler(current_time_ms,&ready_queue,&CPU);
                 break;
             case SCHED_MLFQ:
-                mlfq_scheduler(current_time_ms,&ready_queue,&CPU);
+                mlfq_scheduler(current_time_ms, mq, &CPU);
                 break;
 
             default:

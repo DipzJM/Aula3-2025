@@ -132,6 +132,7 @@ int main(int argc, char *argv[]) {
     burst_t *active_burst;
 
     while ((active_burst = dequeue_burst(&bursts)) != NULL) {
+        printf("[DEBUG] Burst CPU: %u ms, Block: %u ms\n", active_burst->burst_time_ms, active_burst->block_time_ms);
         if (handle_process_requests(sockfd, pid, app_name, active_burst, PROCESS_REQUEST_RUN, &start_time_ms, &sim_clock_ms) == process_error)
             break;
         cpu_duration_ms += active_burst->burst_time_ms;
