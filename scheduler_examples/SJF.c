@@ -19,26 +19,24 @@
  * @param cpu_task Double pointer to the currently running task. This will be updated
  *                 to point to the next task to run.
  */
-void sjf_scheduler(uint32_t current_time_ms, queue_t *rq, pcb_t **cpu_task) {
-    if (*cpu_task) {
-        (*cpu_task)->ellapsed_time_ms += TICKS_MS;      // Add to the running time of the application/task
-        if ((*cpu_task)->ellapsed_time_ms >= (*cpu_task)->time_ms) {
-            // Task finished
-            // Send msg to application
-            msg_t msg = {
-                    .pid = (*cpu_task)->pid,
-                    .request = PROCESS_REQUEST_DONE,
-                    .time_ms = current_time_ms
+void sjf_scheduler(uint32_t current_time_ms, queue_t *rq, pcb_t **cpu_task) {  // Função de escalonamento SJF. Recebe tempo atual, fila de prontos e ponteiro duplo para a tarefa no CPU
+    if (*cpu_task) {        // Se existe uma tarefa em execução
+        (*cpu_task)->ellapsed_time_ms += TICKS_MS;       // Incrementa o tempo já executado do processo
+        if ((*cpu_task)->ellapsed_time_ms >= (*cpu_task)->time_ms) {  // Se o tempo executado atingiu o necessário
+            msg_t msg = {  // Monta uma mensagem para sinalizar término
+                    .pid = (*cpu_task)->pid,   // PID do processo concluído
+                    .request = PROCESS_REQUEST_DONE,  // Indica fim do processo
+                    .time_ms = current_time_ms  // Tempo de conclusão
             };
-            if (write((*cpu_task)->sockfd, &msg, sizeof(msg_t)) != sizeof(msg_t)) {
+            if (write((*cpu_task)->sockfd, &msg, sizeof(msg_t)) != sizeof(msg_t)) {  // Envia a mensagem por socket
                 perror("write");
             }
-            // Application finished and can be removed (this is SJF after all)
-            free((*cpu_task));
-            (*cpu_task) = NULL;
+
+            free((*cpu_task));   // Libera a memória do processo finalizado
+            (*cpu_task) = NULL;  // Marca que não há mais tarefa rodando
         }
     }
-    if (*cpu_task == NULL) {            // If CPU is idle
-        *cpu_task = dequeue_short(rq);   // Get next task from ready queue (dequeue from head)
+    if (*cpu_task == NULL) {        // Se o processador está livre (nenhuma tarefa rodando)
+        *cpu_task = dequeue_short(rq);    // Retira o processo com menor tempo da fila de prontos e coloca na CPU
     }
 }
